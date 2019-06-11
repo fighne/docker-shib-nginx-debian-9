@@ -228,9 +228,9 @@ listen.group = nginx
 ```
 And the rest remains unchanged.
 
-Edit /etc/php5/fpm/php.ini
+Edit /etc/php/7.0/fpm/php.ini
 ```
-nano  /etc/php/7.0/fpm/php.ini
+nano /etc/php/7.0/fpm/php.ini
 ```
 Change the following value:
 ```
@@ -238,7 +238,7 @@ cgi.fix_pathinfo=0
 ```
 Restart php-fpm
 ```
-/etc/init.d/php-fpm restart
+/etc/init.d/php7.0-fpm restart
 ```
 
 ### SHIBBOLETH CONFIGURATION
