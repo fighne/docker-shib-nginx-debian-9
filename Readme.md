@@ -129,7 +129,7 @@ And insert:
 server {
     	listen 80;
 
-    	server_name www.sp.example.it sp.example.it;
+    	server_name www.sp.example.it sp.example.com;
 
     	rewrite ^(.*) https://sp.example.it$1 permanent;
 }
@@ -139,7 +139,7 @@ server {
     server_name sp.example.it;
     root   /var/www/;
     ssl_certificate     /etc/nginx/ssl/bundle.crt;
-    ssl_certificate_key /etc/nginx/ssl/sp_example_it.key;
+    ssl_certificate_key /etc/nginx/ssl/sp_example_com.key;
     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
     ssl_prefer_server_ciphers on;
     ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH";
@@ -175,7 +175,7 @@ server {
          more_clear_input_headers 'displayName' 'mail' 'persistent-id';
          shib_request /shibauthorizer;
          shib_request_use_headers on;
-         fastcgi_pass unix:/var/run/php5-fpm.sock;
+         fastcgi_pass unix:/var/run/php-fpm.sock;
     	  fastcgi_index index.php;
     	  fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
     	  include fastcgi_params;
@@ -197,7 +197,7 @@ cd /etc/nginx/ssl
 
 Copy your certificates, adapting the filename:
 ```
-cat sp_example_it.crt DigiCertCA.crt >> bundle.crt
+cat sp_example_com.crt DigiCertCA.crt >> bundle.crt
 ```
 In the same folder /etc/nginx/ssl run the following command:
 ```
