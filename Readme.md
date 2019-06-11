@@ -40,18 +40,7 @@ RUN apt-get update && \
     apt-get install -y build-essential libpcre3 libpcre3-dev libpcrecpp0v5 libssl-dev zlib1g-dev nano php-fpm wget gnupg
 ```
 
-Install nginx stable version with all the necessary modules.
-To do this you can install the packet compiled by me (point A) or if you have particular needs or you wonder about it, we can develop it together (point B).
-
-* A.Ready packet:
-```bash
-cd /tmp
-wget -O nginx_1.10.1-1~jessie_amd64.deb http://goo.gl/NVqfw3
-dpkg -i nginx_1.10.1-1~jessie_amd64.deb  
-```
-You can jump right to chapter 4 [CONFIGURATIONS](#configurations)
-
-* B.Creation of your customised packet
+* Creation of your customised packet
 
 Change the following file:
 ```
@@ -60,8 +49,8 @@ nano /etc/apt/sources.list
 And add nginx repository:
 ```bash
 #nginx repository
-deb http://nginx.org/packages/debian/ jessie nginx
-deb-src http://nginx.org/packages/debian/ jessie nginx
+deb http://nginx.org/packages/debian/ stretch nginx
+deb-src http://nginx.org/packages/debian/ stretch nginx
 ```
 Then get the key for the new repository:
 ```bash
@@ -69,6 +58,12 @@ cd /tmp
 wget http://nginx.org/keys/nginx_signing.key
 apt-key add nginx_signing.key
 ```
+
+You now need to update the 'apt cache' by running
+```bash
+apt-get update
+```
+
 Now you can download nginx sources (stable version in this moment 1.10.1) and additional modules:
 ```bash
 cd /opt
