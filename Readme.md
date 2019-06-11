@@ -250,7 +250,7 @@ shib-keygen -f
 Uncomment example attribute in attribute-map.xml.
 In production environment select only needed attribute.
 ```
-nano /etc/shibboleth/attribute-map-xml
+nano /etc/shibboleth/attribute-map.xml
 ```
 Uncomment the block under this line
 ```
