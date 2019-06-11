@@ -1,6 +1,6 @@
 # HOW TO SETUP A SHIBBOLETH SP WITH NGINX
 
-#### Author: Marco Cappellacci - Università degli Studi di Urbino Carlo Bo
+#### Changes by Pete Feeney - STFC & original by Marco Cappellacci - Università degli Studi di Urbino Carlo Bo
 
 ## TABLE OF CONTENTS
 
@@ -336,12 +336,13 @@ And run it
 /root/restart.sh
 ```
 Test your work, registering metadata on IDEM test federation.
-You can download metadata from https://sp.example.it/Shibboleth.sso/Metadata
+You can download metadata from https://sp.example.com/Shibboleth.sso/Metadata
 
 **BONUS:** test your SP on ssl labs: https://www.ssllabs.com/ssltest/
 
 
 ### AUTHORS
+ * Pete Feeney - STFC
 
 #### ORIGINAL AUTHORS
 
