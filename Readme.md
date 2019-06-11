@@ -64,7 +64,7 @@ You now need to update the 'apt cache' by running
 apt-get update
 ```
 
-Now you can download nginx sources (stable version in this moment 1.10.1) and additional modules:
+Now you can download nginx sources (stable version in this moment 1.16.0) and additional modules:
 ```bash
 cd /opt
 git clone https://github.com/openresty/headers-more-nginx-module.git
@@ -76,7 +76,7 @@ apt-get build-dep nginx
 ```
 Change the configuration to create the packet:
 ```
-nano nginx1.10.1/debian/rules
+nano nginx1.16.0/debian/rules
 ```
 In the same line of --with-ld-opt="$(LDFLAGS)" add  \ and then:
 ```bash
@@ -90,7 +90,7 @@ dpkg-buildpackage -b
 ```
 Install the generated packet:
 ```
-dpkg -i nginx_1.10.1-1~jessie_amd64.deb  
+dpkg -i nginx_1.16.0-1~jessie_amd64.deb  
 ```
 All the necessary packets have been installed, now proceed with configurations.
 
