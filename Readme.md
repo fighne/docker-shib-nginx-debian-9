@@ -10,7 +10,7 @@
 4. [CONFIGURATIONS](#configurations)
   1. [SUPERVISOR CONFIGURATION](#supervisor-configuration)
   2. [NGINX CONFIGURATION](#nginx-configuration)
-  3. [PHP5-FPM CONFIGURATION](#php5-fpm-configuration)
+  3. [PHP-FPM CONFIGURATION](#php-fpm-configuration)
   4. [SHIBBOLETH CONFIGURATION](#shibboleth-configuration)
 5. [AUTHORS](#authors)
 5. [CREDITS](#credits)
@@ -129,14 +129,14 @@ And insert:
 server {
     	listen 80;
 
-    	server_name www.sp.example.it sp.example.com;
+    	server_name www.sp.example.com sp.example.com;
 
-    	rewrite ^(.*) https://sp.example.it$1 permanent;
+    	rewrite ^(.*) https://sp.example.com$1 permanent;
 }
 
 server {
     listen 443 ssl;
-    server_name sp.example.it;
+    server_name sp.example.com;
     root   /var/www/;
     ssl_certificate     /etc/nginx/ssl/bundle.crt;
     ssl_certificate_key /etc/nginx/ssl/sp_example_com.key;
@@ -207,22 +207,22 @@ More info https://www.openssl.org/docs/manmaster/apps/dhparam.html
 
 **WARNING** when the SP goes into production, the attribute list after “more_clear_input_headers” will be updated.
 
-### PHP5-FPM CONFIGURATION
+### PHP-FPM CONFIGURATION
 
 Create a group and add a new user:
 ```bash
 groupadd www
 useradd -g www www 
 ```
-Change /etc/php5/fpm/pool.d/www.conf 
+Change /etc/php/7.0/fpm/pool.d/www.conf 
 ```
-nano  /etc/php5/fpm/pool.d/www.conf
+nano  /etc/php/7.0/fpm/pool.d/www.conf
 ```
 As follows:
 ```bash
 user = www
 group = www
-listen = /var/run/php5-fpm.sock
+listen = /var/run/php-fpm.sock
 listen.owner = nginx
 listen.group = nginx
 ```
@@ -230,15 +230,15 @@ And the rest remains unchanged.
 
 Edit /etc/php5/fpm/php.ini
 ```
-nano  /etc/php5/fpm/php.ini
+nano  /etc/php/7.0/fpm/php.ini
 ```
 Change the following value:
 ```
 cgi.fix_pathinfo=0
 ```
-Restart php5-fpm
+Restart php-fpm
 ```
-/etc/init.d/php5-fpm restart
+/etc/init.d/php-fpm restart
 ```
 
 ### SHIBBOLETH CONFIGURATION
