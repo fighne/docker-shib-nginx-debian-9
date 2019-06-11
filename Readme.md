@@ -280,7 +280,7 @@ Modify your SP hostname in “ApplicationDefaults”
 ```
 Insert idem test wayf:
 ```bash
-<SSO discoveryProtocol="SAMLDS"discoveryURL="https://wayf.idem-test.garr.it/WAYF">
+<SSO discoveryProtocol="SAMLDS" discoveryURL="https://wayf.idem-test.garr.it/WAYF">
      SAML2
 </SSO>
 ```
