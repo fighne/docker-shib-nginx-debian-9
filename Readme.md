@@ -222,7 +222,7 @@ As follows:
 ```bash
 user = www
 group = www
-listen = /var/run/php-fpm.sock
+
 listen.owner = nginx
 listen.group = nginx
 ```
