@@ -306,6 +306,12 @@ wget https://md.idem.garr.it/certs/idem-signer-20220121.pem -O /etc/shibboleth/f
 
 chmod 444 /etc/shibboleth/federation-cert.pem
 ```
+
+There are the include files missing and they need to be in the correct directory.
+```bash
+cp /opt/nginx-http-shibboleth/includes/* /etc/nginx
+```
+
 Restart all services using the following script:
 ```
 nano /root/restart.sh
