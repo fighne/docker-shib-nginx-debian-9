@@ -264,7 +264,7 @@ Before “ApplicationDefaults” add:
 ```bash
 <RequestMapper type="XML">
 	<RequestMap >
-    	<Host name="sp.example.it"
+    	<Host name="sp.example.com"
             	authType="shibboleth"
             	requireSession="true"
             	redirectToSSL="443">
@@ -275,7 +275,7 @@ Before “ApplicationDefaults” add:
 ```
 Modify your SP hostname in “ApplicationDefaults” 
 ```bash
-<ApplicationDefaults entityID="https://sp.example.it/shibboleth"
+<ApplicationDefaults entityID="https://sp.example.com/shibboleth"
                      	REMOTE_USER="eppn persistent-id targeted-id">
 ```
 Insert idem test wayf:
