@@ -18,7 +18,7 @@
 
 ## PREREQUISITES
 
-* Debian 8
+* Debian 9
 * Valid https certificates emitted by an approved CA
 * File ```/etc/hosts``` with the ip and the hostname of your SP
 
@@ -34,10 +34,10 @@ The example SP hostname is sp.example.it, you need to change it with your real S
 
 Install all the necessary packets to make shibboleth, nginx and supervisor work.
 ```bash
-apt-get update && \
-    apt-get install -y  opensaml2-schemas xmltooling-schemas libshibsp6 \
+RUN apt-get update && \
+    apt-get install -y  opensaml2-schemas xmltooling-schemas libshibsp7 \
         libshibsp-plugins shibboleth-sp2-common shibboleth-sp2-utils supervisor procps curl git && \
-    apt-get install -y build-essential libpcre3 libpcre3-dev libpcrecpp0 libssl-dev zlib1g-dev php5-fpm
+    apt-get install -y build-essential libpcre3 libpcre3-dev libpcrecpp0v5 libssl-dev zlib1g-dev nano php-fpm wget gnupg
 ```
 
 Install nginx stable version with all the necessary modules.
