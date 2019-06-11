@@ -284,7 +284,7 @@ Insert idem test wayf:
      SAML2
 </SSO>
 ```
-Add metadataprovider:
+Add metadataprovider ( scroll down to find the commented out example one and replace ):
 ```bash
 <MetadataProvider type="XML" uri="http://md.idem.garr.it/metadata/idem-test-metadata-sha256.xml" backingFilePath="idem-test-metadata-sha256.xml" reloadInterval="7200">
    <MetadataFilter type="Signature" certificate="federation-cert.pem"/>
