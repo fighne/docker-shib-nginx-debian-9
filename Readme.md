@@ -76,7 +76,7 @@ apt-get build-dep nginx
 ```
 Change the configuration to create the packet:
 ```
-nano nginx1.16.0/debian/rules
+nano nginx-1.16.0/debian/rules
 ```
 In the same line of --with-ld-opt="$(LDFLAGS)" add  \ and then:
 ```bash
