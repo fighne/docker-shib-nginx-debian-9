@@ -90,7 +90,7 @@ dpkg-buildpackage -b
 ```
 Install the generated packet:
 ```
-dpkg -i nginx_1.16.0-1~jessie_amd64.deb  
+dpkg -i nginx_1.16.0-1~stretch_amd64.deb  
 ```
 All the necessary packets have been installed, now proceed with configurations.
 
